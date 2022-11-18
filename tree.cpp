@@ -19,7 +19,7 @@ static void create_root(BTNode *&r){
 }
 
 //创建二叉树
-static void create_tree(BTNode *&r,Elemtype *str){
+static void create_tree(BTNode *&r,Elemtype str[]){
     BTNode *p,*st[Maxsize];
     char ch=str[0];
     int top=0,i=0,k=0;
@@ -39,9 +39,9 @@ static void create_tree(BTNode *&r,Elemtype *str){
                 }
                 else
                     switch (k) {
-                        case 1: p->data=ch,st[top]->lchild=p;
+                        case 1: p->data=ch,st[top]->lchild=p;//作为左子树添加到父节点
                             break;
-                        case 2: p->data=ch,st[top]->rchild=p;
+                        case 2: p->data=ch,st[top]->rchild=p;//作为右子树添加到父节点
                             break;
                         case 0:
                             top--;
@@ -125,7 +125,7 @@ static int count_deep(BTNode *&r){
 }
 
 
-
+//定义哈夫曼结点
 typedef struct {
     Elemtype data;
     double weight;
@@ -134,16 +134,36 @@ typedef struct {
 }HTNode;
 
 //自动哈夫曼树
-static void autohuffman(HTNode *&ht,int num){
-    HTNode *p,tr[Maxsize];
-    int top=0;
-    int k=1;
+static void autohuffman(HTNode *ht,int num){
+    HTNode *p;
+    int top=0,max=num;
+    double min1,min2;
     for(int i=0;i<num;i++){//按照权重从小到大排序
         for(int j=i;j<num;j++)
             if(ht[i].weight>ht[j].weight)
                 p=&ht[i],ht[j]=ht[i],ht[i]=*p;//交换结点
     }
-    while (1){
-
+    //connect
+    ht[max].rchild=0,ht[max].weight+=ht[0].weight,ht[0].parent=max;
+    top++;
+    while(top<num){
+        if(ht[max].lchild!=0)
+            max++,ht[max].rchild=max-1,ht[max].weight+=ht[max-1].weight,ht[max-1].parent=max;//创建父节点
+        ht[max].lchild=top,ht[max].weight+=ht[top].weight,ht[top].parent=max;//添加左叶子
+        top++;
+    }
+    //编码
+    int level=0;
+    while(max>top){
+        if(level>0){//继承数据
+            for(int i=0;i<level;i++){
+                ht[ht[max].lchild].cd[i]=ht[max].cd[i];
+                ht[ht[max].rchild].cd[i]=ht[max].cd[i];
+            }
+        }
+        ht[ht[max].lchild].cd[level]='0';
+        ht[ht[max].rchild].cd[level]='1';
+        level++;
+        max--;
     }
 }

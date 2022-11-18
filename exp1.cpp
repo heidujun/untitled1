@@ -1,8 +1,19 @@
-#include "SqQueue.cpp"
+#include "tree.cpp"
 int main(){
-    for(int i=0;i<3;i++){
-        fun();
-        printf("\n");
-    }
+//
+    Elemtype str[Maxsize]="A(B(C,D),E(F(G,H),I))";
+    BTNode *r;
+    create_root(r);
+
+    create_tree(r,str);
+
+    disptree(r);
+
+    before_display(r);
+
+    Inorder(r);
+
+    PostOrder(r);
+
     return 0;
 }
