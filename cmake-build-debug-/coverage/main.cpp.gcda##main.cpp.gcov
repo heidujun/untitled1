@@ -1,0 +1,23 @@
+        -:    0:Source:C:/Users/hyh25/CLionProjects/untitled1/main.cpp
+        -:    0:Graph:C:\Users\hyh25\CLionProjects\untitled1\cmake-build-debug-\CMakeFiles\untitled1.dir\main.cpp.gcno
+        -:    0:Data:C:\Users\hyh25\CLionProjects\untitled1\cmake-build-debug-\CMakeFiles\untitled1.dir\main.cpp.gcda
+        -:    0:Runs:1
+        -:    1:#include <iostream>
+        -:    2:#include<stdio.h>
+        -:    3:struct LinkNode{
+        -:    4:    int value;
+        -:    5:    LinkNode *next;
+        -:    6:};
+function _Z8InitlistRP8LinkNode called 1 returned 100% blocks executed 100%
+        1:    7:void Initlist(LinkNode *&L){
+        1:    8:    L=(LinkNode *) malloc(sizeof(LinkNode));
+        1:    9:    L->next=NULL;
+        1:   10:}
+function main called 1 returned 100% blocks executed 100%
+        1:   11:int main(){
+        1:   12:    int a=1;
+        -:   13:    LinkNode *h;
+        1:   14:    Initlist(h);
+        1:   14-block  0
+call    0 returned 1
+        1:   15:}

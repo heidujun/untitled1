@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\hyh25\CLionProjects\untitled1\cmake-build-debug\CMakeFiles\c75f343d1030482fd0c8eeff868c1c95\generate.stamp.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{7074F338-D08D-3F15-AFB5-31B7DF58D19C}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

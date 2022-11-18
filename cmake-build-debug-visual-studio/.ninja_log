@@ -1,0 +1,6 @@
+# ninja log v5
+0	193	6866572654979915	CMakeFiles/untitled1.dir/Debug/SqStack.cpp.obj	dce088f595e999c0
+6	382	6866438052690105	CMakeFiles/untitled1.dir/Debug/linklist.cpp.obj	8de1cbb337146628
+195	307	6866572655936711	Debug/untitled1.exe	6c43d9bc3fe621ac
+0	382	6866438052690105	CMakeFiles/untitled1.dir/Debug/SqQueue.cpp.obj	90d93c3f9de8c1d6
+5	194	6866572654999870	CMakeFiles/untitled1.dir/Debug/exp1.cpp.obj	a95a81bcab39a2bb

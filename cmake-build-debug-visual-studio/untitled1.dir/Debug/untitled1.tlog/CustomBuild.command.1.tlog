@@ -1,0 +1,10 @@
+^C:\USERS\HYH25\CLIONPROJECTS\UNTITLED1\CMAKELISTS.TXT
+setlocal
+C:\Users\hyh25\AppData\Local\JetBrains\Toolbox\apps\CLion\ch-0\221.5921.27\bin\cmake\win\bin\cmake.exe -SC:/Users/hyh25/CLionProjects/untitled1 -BC:/Users/hyh25/CLionProjects/untitled1/cmake-build-debug-visual-studio --check-stamp-file C:/Users/hyh25/CLionProjects/untitled1/cmake-build-debug-visual-studio/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
